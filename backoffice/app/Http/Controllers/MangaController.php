@@ -27,7 +27,7 @@ class MangaController extends Controller
      */
     public function create()
     {
-        //
+        return view('manga.create');
     }
 
     /**
@@ -35,7 +35,23 @@ class MangaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $newManga = new Manga();
+
+        $newManga->titolo = $data['titolo'];
+        $newManga->autore = $data['autore'];
+        $newManga->descrizione = $data['descrizione'];
+        $newManga->url_copertina = $data['url_copertina'];
+        $newManga->editore = $data['editore'];
+        $newManga->status = $data['status'];
+        $newManga->numero_volumi = $data['numero_volumi'];
+        $newManga->data_inizio = $data['data_inizio'];
+        $newManga->valutazione = $data['valutazione'];
+
+        $newManga->save();
+
+        return redirect()->route('manga.show', $newManga->id);
     }
 
     /**
@@ -50,9 +66,9 @@ class MangaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Manga $manga)
     {
-        //
+        return view('manga.edit', compact('manga'));
     }
 
     /**

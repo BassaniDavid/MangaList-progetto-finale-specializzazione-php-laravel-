@@ -19,7 +19,7 @@
             <p>{{$manga->data_inizio}}</p>
             <p>{{$manga->valutazione}}</p>
             <p>{{$manga->descrizione}}</p>
-            <a href="{{ url()->previous() }}" class="btn btn-secondary">Torna indietro</a>
+            <a href="{{ route('manga.index') }}" class="btn btn-secondary">Torna alla lista completa</a>
 
         </div>
     </div>

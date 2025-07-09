@@ -5,15 +5,16 @@
 <div class="jumbotron p-5 mb-4 rounded-3">
     <div class="container py-5">
         <h2 class="fs-2 mb-5 text-center">benvenuto nella sezione index dei manga!</h2>
+        <a href="{{ route('manga.create') }}">aggiungi nuovo manga</a>
         <div class="card p-4">
             <table class="table table-bordered m-0">
                 <tr>
-                    <th>titolo</th>
-                    <th>autore</th>
-                    <th>editore</th>
-                    <th>status</th>
-                    <th>numero volumi</th>
-                    <th>dettagli</th>
+                    <th class="bg-primary-subtle">titolo</th>
+                    <th class="bg-primary-subtle">autore</th>
+                    <th class="bg-primary-subtle">editore</th>
+                    <th class="bg-primary-subtle">status</th>
+                    <th class="bg-primary-subtle">numero volumi</th>
+                    <th class="bg-primary-subtle">dettagli</th>
                 </tr>
 
                     @foreach ($mangas as $manga)
@@ -23,7 +24,7 @@
                         <td>{{ $manga->editore }}</td>
                         <td>{{ $manga->status }}</td>
                         <td>{{ $manga->numero_volumi }}</td>
-                        <td><a href="{{ route('manga.show', $manga->id) }}">visualizza dettagli</a></td>
+                        <td class="text-center"><a href="{{ route('manga.show', $manga->id) }}" class="btn btn-outline-success bg-success-subtle p-0 px-2">visualizza dettagli</a></td>
                     </tr>
                     @endforeach
             </table>
