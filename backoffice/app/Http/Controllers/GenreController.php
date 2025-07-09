@@ -13,7 +13,7 @@ class GenreController extends Controller
     public function index()
     {
         // prendo tutti i dati dal db inerente i generi
-        $genres = Genre::all();
+        $genres = Genre::orderBy('genere', 'asc')->get();
 
         // dd($genres);
 
@@ -43,7 +43,7 @@ class GenreController extends Controller
      */
     public function show(string $id)
     {
-        //
+        //per i generi non mi interessa, tuttwe le info si vedono già dalla index
     }
 
     /**

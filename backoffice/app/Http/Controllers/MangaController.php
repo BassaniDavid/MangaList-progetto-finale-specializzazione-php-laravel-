@@ -13,7 +13,7 @@ class MangaController extends Controller
     public function index()
     {
         // prendo tutti i dati dal db inerente i manga
-        $mangas = Manga::all();
+        $mangas = Manga::orderBy('titolo', 'asc')->get();
 
         // dd($mangas);
 
@@ -41,9 +41,10 @@ class MangaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Manga $manga)
     {
         //
+        return view('manga.show', compact('manga'));
     }
 
     /**

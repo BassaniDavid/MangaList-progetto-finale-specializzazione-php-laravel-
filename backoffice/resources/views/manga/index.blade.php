@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="jumbotron p-5 mb-4 bg-light rounded-3">
+<div class="jumbotron p-5 mb-4 rounded-3">
     <div class="container py-5">
         <h2 class="fs-2 mb-5 text-center">benvenuto nella sezione index dei manga!</h2>
         <div class="card p-4">
@@ -13,15 +13,17 @@
                     <th>editore</th>
                     <th>status</th>
                     <th>numero volumi</th>
+                    <th>dettagli</th>
                 </tr>
 
                     @foreach ($mangas as $manga)
                     <tr>
-                        <td>{{ $manga->titolo }}</td>
+                        <td><strong>{{ $manga->titolo }}</strong></td>
                         <td>{{ $manga->autore }}</td>
                         <td>{{ $manga->editore }}</td>
                         <td>{{ $manga->status }}</td>
                         <td>{{ $manga->numero_volumi }}</td>
+                        <td><a href="{{ route('manga.show', $manga->id) }}">visualizza dettagli</a></td>
                     </tr>
                     @endforeach
             </table>
