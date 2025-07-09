@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\GenreController;
 use App\Http\Controllers\MangaController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -21,6 +22,9 @@ Route::middleware('auth')->group(function () {
 
 // in automatico laravel crea tutte le rotte collegandosi a mangacontroller
 Route::resource('manga', MangaController::class);
+
+// in automatico laravel crea tutte le rotte collegandosi a genrecontroller
+Route::resource('genre', GenreController::class);
 
 
 require __DIR__.'/auth.php';

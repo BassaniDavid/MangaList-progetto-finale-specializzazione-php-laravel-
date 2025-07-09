@@ -2,16 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Genre;
 use Illuminate\Http\Request;
 
 class GenreController extends Controller
 {
-    /**
+   /**
      * Display a listing of the resource.
      */
     public function index()
     {
+        // prendo tutti i dati dal db inerente i generi
+        $genres = Genre::all();
 
+        // dd($genres);
+
+
+
+        return view("genre.index", compact('genres'));
     }
 
     /**

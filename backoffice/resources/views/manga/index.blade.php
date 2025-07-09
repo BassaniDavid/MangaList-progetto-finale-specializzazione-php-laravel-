@@ -4,7 +4,28 @@
 
 <div class="jumbotron p-5 mb-4 bg-light rounded-3">
     <div class="container py-5">
-        <div class="fs-2">benvenuto nella sezione index!</div>
+        <h2 class="fs-2 mb-5 text-center">benvenuto nella sezione index dei manga!</h2>
+        <div class="card p-4">
+            <table class="table table-bordered m-0">
+                <tr>
+                    <th>titolo</th>
+                    <th>autore</th>
+                    <th>editore</th>
+                    <th>status</th>
+                    <th>numero volumi</th>
+                </tr>
+
+                    @foreach ($mangas as $manga)
+                    <tr>
+                        <td>{{ $manga->titolo }}</td>
+                        <td>{{ $manga->autore }}</td>
+                        <td>{{ $manga->editore }}</td>
+                        <td>{{ $manga->status }}</td>
+                        <td>{{ $manga->numero_volumi }}</td>
+                    </tr>
+                    @endforeach
+            </table>
+        </div>
 
         {{-- @dd($mangas) --}}
 
