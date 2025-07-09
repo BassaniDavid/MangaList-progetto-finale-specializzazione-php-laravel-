@@ -67,9 +67,17 @@ class GenreController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Genre $genre)
     {
-        //
+        $data = $request->all();
+
+        $genre->genere = $data['genere'];
+        $genre->descrizione = $data['descrizione'];
+
+
+        $genre->update();
+
+        return redirect()->route('genre.index');
     }
 
     /**

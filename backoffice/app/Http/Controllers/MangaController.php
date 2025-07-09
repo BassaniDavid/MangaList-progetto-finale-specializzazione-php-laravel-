@@ -74,9 +74,23 @@ class MangaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Manga $manga)
     {
-        //
+        $data = $request->all();
+
+        $manga->titolo = $data['titolo'];
+        $manga->autore = $data['autore'];
+        $manga->descrizione = $data['descrizione'];
+        $manga->url_copertina = $data['url_copertina'];
+        $manga->editore = $data['editore'];
+        $manga->status = $data['status'];
+        $manga->numero_volumi = $data['numero_volumi'];
+        $manga->data_inizio = $data['data_inizio'];
+        $manga->valutazione = $data['valutazione'];
+
+        $manga->update();
+
+        return redirect()->route('manga.show', $manga->id);
     }
 
     /**

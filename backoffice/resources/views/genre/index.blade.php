@@ -11,12 +11,16 @@
                 <tr>
                     <th>genere</th>
                     <th>descrizione</th>
+                    <th></th>
                 </tr>
 
                     @foreach ($genres as $genre)
                     <tr>
                         <td>{{ $genre->genere }}</td>
                         <td>{{ $genre->descrizione }}</td>
+                        <td class="text-center">
+                            <a class="btn btn-outline-warning p-0 px-2" href="{{ route('genre.edit', $genre) }}">modifica</a>
+                        </td>
                     </tr>
                     @endforeach
             </table>

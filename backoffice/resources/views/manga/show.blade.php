@@ -19,6 +19,7 @@
             <p>{{$manga->data_inizio}}</p>
             <p>{{$manga->valutazione}}</p>
             <p>{{$manga->descrizione}}</p>
+            <a class="btn btn-outline-warning p-0 px-2 mb-3" href="{{ route('manga.edit', $manga) }}">modifica</a>
             <a href="{{ route('manga.index') }}" class="btn btn-secondary">Torna alla lista completa</a>
 
         </div>

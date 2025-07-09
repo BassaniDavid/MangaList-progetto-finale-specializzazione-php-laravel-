@@ -15,6 +15,7 @@
                     <th class="bg-primary-subtle">status</th>
                     <th class="bg-primary-subtle">numero volumi</th>
                     <th class="bg-primary-subtle">dettagli</th>
+                    <th class="bg-primary-subtle"></th>
                 </tr>
 
                     @foreach ($mangas as $manga)
@@ -24,7 +25,12 @@
                         <td>{{ $manga->editore }}</td>
                         <td>{{ $manga->status }}</td>
                         <td>{{ $manga->numero_volumi }}</td>
-                        <td class="text-center"><a href="{{ route('manga.show', $manga->id) }}" class="btn btn-outline-success bg-success-subtle p-0 px-2">visualizza dettagli</a></td>
+                        <td class="text-center">
+                            <a href="{{ route('manga.show', $manga->id) }}" class="btn btn-outline-success p-0 px-2">visualizza dettagli</a>
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-outline-warning p-0 px-2" href="{{ route('manga.edit', $manga) }}">modifica</a>
+                        </td>
                     </tr>
                     @endforeach
             </table>
