@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
+use App\Http\Controllers\Controller;
+use App\Models\Genre;
 use App\Models\Manga;
 use Illuminate\Http\Request;
 
@@ -27,7 +29,9 @@ class MangaController extends Controller
      */
     public function create()
     {
-        return view('manga.create');
+        // prendo i generi
+        $genres = Genre::all();
+        return view('manga.create', compact('genres'));
     }
 
     /**
@@ -51,6 +55,8 @@ class MangaController extends Controller
 
         $newManga->save();
 
+        $newManga->genres()->attach($data['genres']);
+
         return redirect()->route('manga.show', $newManga->id);
     }
 
@@ -59,7 +65,7 @@ class MangaController extends Controller
      */
     public function show(Manga $manga)
     {
-        //
+        // dd($manga->genres);
         return view('manga.show', compact('manga'));
     }
 
@@ -68,7 +74,10 @@ class MangaController extends Controller
      */
     public function edit(Manga $manga)
     {
-        return view('manga.edit', compact('manga'));
+        // prendo i generi
+        $genres = Genre::all();
+
+        return view('manga.edit', compact('manga', 'genres'));
     }
 
     /**
@@ -90,14 +99,18 @@ class MangaController extends Controller
 
         $manga->update();
 
+        $manga->genres()->sync($data['genres']);
+
         return redirect()->route('manga.show', $manga->id);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Manga $manga)
     {
-        //
+        $manga->delete();
+
+        return redirect()->route('manga.index');
     }
 }

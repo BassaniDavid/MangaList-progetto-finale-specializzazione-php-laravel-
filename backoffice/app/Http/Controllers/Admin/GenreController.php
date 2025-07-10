@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Genre;
+use App\Models\Manga;
 use Illuminate\Http\Request;
 
 class GenreController extends Controller
@@ -27,7 +29,10 @@ class GenreController extends Controller
      */
     public function create()
     {
-        return view('genre.create');
+        // prendo i manga
+        $mangas = Manga::all();
+
+        return view('genre.create', compact('mangas'));
     }
 
     /**
@@ -45,6 +50,8 @@ class GenreController extends Controller
 
         $newGenre->save();
 
+        $newGenre->mangas()->attach($data['mangas']);
+
         return redirect()->route('genre.index');
     }
 
@@ -61,7 +68,10 @@ class GenreController extends Controller
      */
     public function edit(genre $genre)
     {
-         return view('genre.edit', compact('genre'));
+        // prendo i manga
+        $mangas = Manga::all();
+
+        return view('genre.edit', compact('genre', 'mangas'));
     }
 
     /**
@@ -74,8 +84,9 @@ class GenreController extends Controller
         $genre->genere = $data['genere'];
         $genre->descrizione = $data['descrizione'];
 
-
         $genre->update();
+
+        $genre->mangas()->sync($data['mangas']);
 
         return redirect()->route('genre.index');
     }
@@ -83,8 +94,10 @@ class GenreController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Genre $genre)
     {
-        //
+        $genre->delete();
+
+        return redirect()->route('genre.index');
     }
 }

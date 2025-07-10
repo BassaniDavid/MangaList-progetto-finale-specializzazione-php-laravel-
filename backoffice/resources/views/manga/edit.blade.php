@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+{{-- @dd($manga->genres); --}}
 
 <div class="container my-5">
     <h1 class="text-center my-4">modifica i dati del manga</h1>
@@ -33,13 +34,13 @@
         <input type="text" name="valutazione" id="valutazione" value="{{ $manga->valutazione }}">
 
 
-        {{-- tags --}}
-        {{-- <div class="mt-3">
-                @foreach ($tags as $tag)
-                    <input type="checkbox" class="ms-5" id="tag-{{ $tag->id }}" name="tags[]" value="{{ $tag->id }}"></input>
-                    <label for="tag-{{ $tag->id }}">{{$tag->name }}</label>
+        {{-- generi --}}
+        <div class="mt-3">
+                @foreach ($genres as $genre)
+                    <input type="checkbox" class="ms-5" id="genre-{{ $genre->id }}" name="genres[]" value="{{ $genre->id }}" {{ $manga->genres->contains($genre->id) ? 'checked' : '' }}></input>
+                    <label for="genre-{{ $genre->id }}">{{$genre->genere }}</label>
                 @endforeach
-        </div> --}}
+        </div>
 
         <label for="descrizione" class="my-2">descrizione</label>
         <textarea name="descrizione" id="descrizione" rows="5" >{{ $manga->descrizione }}</textarea>

@@ -11,13 +11,15 @@
         <label for="descrizione" class="my-2">descrizione</label>
         <textarea name="descrizione" id="descrizione" rows="5"></textarea>
 
-        {{-- tags --}}
-        {{-- <div class="mt-3">
-                @foreach ($tags as $tag)
-                    <input type="checkbox" class="ms-5" id="tag-{{ $tag->id }}" name="tags[]" value="{{ $tag->id }}"></input>
-                    <label for="tag-{{ $tag->id }}">{{$tag->name }}</label>
+        {{-- manga --}}
+        <div class="mt-3  d-flex flex-wrap">
+                @foreach ($mangas as $manga)
+                <div>
+                    <input type="checkbox" class="ms-5" id="manga-{{ $manga->id }}" name="mangas[]" value="{{ $manga->id }}"></input>
+                    <label for="manga-{{ $manga->id }}">{{$manga->titolo }}</label>
+                </div>
                 @endforeach
-        </div> --}}
+        </div>
 
         <input type="submit" value="salva" class="btn btn-success mt-3 w-50 m-auto">
     </form>
