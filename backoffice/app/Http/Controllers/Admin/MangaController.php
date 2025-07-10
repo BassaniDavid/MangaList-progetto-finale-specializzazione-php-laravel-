@@ -99,7 +99,13 @@ class MangaController extends Controller
 
         $manga->update();
 
-        $manga->genres()->sync($data['genres']);
+        if($request->has('genres')) {
+
+            $manga->genres()->sync($data['genres']);
+
+        }else{
+            $manga->genres()->detach();
+        }
 
         return redirect()->route('manga.show', $manga->id);
     }

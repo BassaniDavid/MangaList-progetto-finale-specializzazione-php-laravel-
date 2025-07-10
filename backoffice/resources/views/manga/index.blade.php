@@ -4,8 +4,8 @@
 
 <div class="jumbotron p-5 mb-4 rounded-3">
     <div class="container py-5">
-        <h2 class="fs-2 mb-5 text-center">benvenuto nella sezione index dei manga!</h2>
-        <a href="{{ route('manga.create') }}">aggiungi nuovo manga</a>
+        <h2 class="fs-2 mb-5 text-center">benvenuto nella sezione dei manga</h2>
+        <h3 class="mb-5 text-center"><a href="{{ route('manga.create') }}" class="btn btn-lg btn-outline-info">aggiungi nuovo manga</a></h3>
         <div class="card p-4">
             <table class="table table-bordered m-0">
                 <tr>
@@ -14,7 +14,7 @@
                     <th class="bg-primary-subtle">editore</th>
                     <th class="bg-primary-subtle">status</th>
                     <th class="bg-primary-subtle">numero volumi</th>
-                    <th class="bg-primary-subtle">dettagli</th>
+                    <th class="bg-primary-subtle text-center">dettagli</th>
                     <th class="bg-primary-subtle"></th>
                     <th class="bg-primary-subtle"></th>
                 </tr>

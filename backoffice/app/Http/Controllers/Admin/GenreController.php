@@ -86,7 +86,13 @@ class GenreController extends Controller
 
         $genre->update();
 
+        if($request->has('mangas')) {
+
         $genre->mangas()->sync($data['mangas']);
+
+        }else{
+            $genre->mangas()->detach();
+        }
 
         return redirect()->route('genre.index');
     }
