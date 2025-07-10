@@ -75,9 +75,9 @@
   const deleteModal = document.getElementById('deleteModal');
   deleteModal.addEventListener('show.bs.modal', function (event) {
     const button = event.relatedTarget;
-    const genreId = button.getAttribute('data-id');
+    const mangaId = button.getAttribute('data-id');
     const form = document.getElementById('deleteForm');
-    form.action = `/genre/${genreId}`;
+    form.action = `/manga/${mangaId}`;
   });
 </script>
 @endsection

@@ -8,7 +8,7 @@
         <div class="card">
             <div class="card-body p-3">
                 <h5 class="">
-                    Autore: {{$manga->autore}}
+                    {{$manga->titolo}}
                 </h5>
                 <div></div>
                 <div></div>

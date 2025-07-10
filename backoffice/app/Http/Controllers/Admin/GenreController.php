@@ -102,6 +102,7 @@ class GenreController extends Controller
      */
     public function destroy(Genre $genre)
     {
+        $genre->mangas()->detach();
         $genre->delete();
 
         return redirect()->route('genre.index');

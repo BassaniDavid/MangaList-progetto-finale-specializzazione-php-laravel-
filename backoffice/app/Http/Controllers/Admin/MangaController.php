@@ -115,6 +115,7 @@ class MangaController extends Controller
      */
     public function destroy(Manga $manga)
     {
+        $manga->genres()->detach();
         $manga->delete();
 
         return redirect()->route('manga.index');

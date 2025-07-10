@@ -37,7 +37,7 @@
         <div class="mt-3 d-flex row flex-wrap mb-3">
             <span class="w-100 fs-4 mb-3">generi:</span>
                 @foreach ($genres as $genre)
-                <div  class="col-6 col-md-4 col-lg-3 col-xxl-2">
+                <div  class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2">
                     <input type="checkbox" id="genre-{{ $genre->id }}" name="genres[]" value="{{ $genre->id }}"></input>
                     <label for="genre-{{ $genre->id }}">{{$genre->genere }}</label>
                 </div>
@@ -45,7 +45,7 @@
         </div>
 
         <label for="descrizione" class="my-2 fs-4">descrizione</label>
-        <textarea name="descrizione" id="descrizione" rows="5"></textarea>
+        <textarea name="descrizione" id="descrizione" rows="4"></textarea>
 
         <input type="submit" value="salva" class="btn btn-success mt-3 w-50 m-auto">
     </form>
