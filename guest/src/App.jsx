@@ -18,7 +18,7 @@ function App() {
         {/* tutte le rotte passerando prima dal layout */}
         <Route element={<DefaultLayout />}>
           <Route path="/" element={<IndexPage />} />
-          <Route path="/" element={<IndexPage />} />
+          <Route path="/:titolo" element={<ShowPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
