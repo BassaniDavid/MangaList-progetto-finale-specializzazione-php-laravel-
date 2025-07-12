@@ -20,7 +20,7 @@ export default function IndexCard({ data }) {
         alt="immagine copertina"
         className="w-full object-cover h-auto md:h-110 lg:h-156 xl:h-130 2xl:h-114 rounded-lg border-4 border-solid mb-5"
       />
-      <h2 className=" text-3xl xl:text-4xl mb-5 whitespace-nowrap overflow-hidden text-ellipsis">
+      <h2 className=" text-3xl xl:text-4xl/relaxed mb-5 whitespace-nowrap overflow-hidden text-ellipsis font-bold">
         {titolo}
       </h2>
       <div className=" text-2xl xl:text-3xl">

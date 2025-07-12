@@ -7,11 +7,11 @@ import Header from "../components/header";
 
 const DefaultLayout = () => {
   return (
-    <body className="bg-indigo-950 text-lime-400">
+    <div className="bg-indigo-950 text-lime-400">
       <Header />
       <Outlet />
       <Footer />
-    </body>
+    </div>
   );
 };
 
