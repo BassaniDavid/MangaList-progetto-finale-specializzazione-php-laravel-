@@ -20,13 +20,13 @@ export default function ShowPage() {
 
   return (
     <div className="container mx-auto px-10">
-      <div className="inset-shadow-sm/90 inset-shadow-black/100 rounded-lg p-5 bg-indigo-900 h-full grid grid-cols-2 gap-5">
+      <div className="inset-shadow-sm/90 inset-shadow-black/100 rounded-lg p-5 bg-indigo-900 h-full grid grid-cols-1 lg:grid-cols-3 lg:gap-5">
         <img
           src={url_copertina}
           alt="immagine copertina"
-          className="object-cover rounded-lg border-4 border-solid mr-5 "
+          className="rounded-lg border-4 border-solid w-full mx-auto"
         />
-        <div>
+        <div className="col-span-2">
           <div className="flex justify-between text-3xl xl:text-4xl/relaxed mb-5 font-bold">
             <h2 className="whitespace-nowrap overflow-hidden text-ellipsis">
               {titolo}
