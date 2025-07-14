@@ -34,22 +34,27 @@ export default function ShowPage() {
             <h6>{valutazione}</h6>
           </div>
           <div className=" text-2xl xl:text-3xl">
-            <h6 className="whitespace-nowrap overflow-hidden text-ellipsis">
+            <h6 className="whitespace-nowrap overflow-hidden text-ellipsis  mb-5">
               autore: {autore}
             </h6>
-            <h6>volumi: {numero_volumi}</h6>
+            <h6 className=" mb-3">volumi: {numero_volumi}</h6>
 
-            <div>
+            <div className=" mb-3 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5 text-center text-sm">
               {genres.length
                 ? genres.map((genre) => (
-                    <div key={genre.id}>{genre.genere}</div>
+                    <div
+                      key={genre.id}
+                      className=" bg-lime-400  rounded-xl text-indigo-800 font-bold py-0"
+                    >
+                      {genre.genere}
+                    </div>
                   ))
                 : ""}
             </div>
           </div>
-          <h6>stato: {status}</h6>
-          <h6>in uscita dal: {data_inizio}</h6>
-          <h6>trama: {descrizione}</h6>
+          <h6 className=" mb-3">stato: {status}</h6>
+          <h6 className=" mb-3">in uscita dal: {data_inizio}</h6>
+          <h6 className=" mb-3">trama: {descrizione}</h6>
         </div>
       </div>
     </div>

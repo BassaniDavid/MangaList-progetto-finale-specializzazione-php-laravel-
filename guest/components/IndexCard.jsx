@@ -29,9 +29,16 @@ export default function IndexCard({ data }) {
         </h6>
         <h6>volumi: {numero_volumi}</h6>
         <h6>{valutazione}</h6>
-        <div>
+        <div className="grid grid-cols-3 h-20 my-4 gap-2 text-center">
           {genres.length
-            ? genres.map((genre) => <div key={genre.id}>{genre.genere}</div>)
+            ? genres.map((genre) => (
+                <div
+                  key={genre.id}
+                  className="text-sm bg-lime-400  rounded-xl text-indigo-800 font-bold"
+                >
+                  {genre.genere}
+                </div>
+              ))
             : ""}
         </div>
       </div>
