@@ -20,8 +20,6 @@
 - Vedere i dettagli di un singolo elemento mostrando anche le informazioni collegate
 - comunicare con il backend tramite chiamate AJAX ad API REST
 
-AGGIUNGERE SCREENSHOT
-
 ### Tecnologie utilizzate
 
 | Tecnologia     | Utilizzo                                 |
@@ -32,6 +30,19 @@ AGGIUNGERE SCREENSHOT
 | React          | Frontend pubblico                        |
 | Vite           | Build tool sia per laravel che per React |
 | Axios          | Chiamate API                             |
+| bootstrap      | layout backoffice                        |
+| tailwind       | layout sito guest                        |
+
+### screenshot backoffice
+
+![pagina principale](./screenshot3.png)
+![pagina dei manga](./screenshot4.png)
+![pagina dei generi](./screenshot5.png)
+
+### screenshot guest
+
+![pagina principale](./screenshot1.png)
+![pagina dettaglio del manga](./screenshot2.png)
 
 Realizzato da: Bassani David  
 Progetto finale della specializzazione PHP di Boolean
