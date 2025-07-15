@@ -13,6 +13,8 @@ export default function IndexCard({ data }) {
     valutazione,
   } = data;
 
+  const maxStars = 10;
+
   return (
     <div className="inset-shadow-sm/90 inset-shadow-black/100 rounded-lg p-5 bg-indigo-900 h-full flex flex-col justify-between">
       <img
@@ -23,13 +25,25 @@ export default function IndexCard({ data }) {
       <h2 className=" text-3xl xl:text-4xl/relaxed mb-5 whitespace-nowrap overflow-hidden text-ellipsis font-bold">
         {titolo}
       </h2>
+      <h6 className="text-sm mb-3">
+        {valutazione}
+        {[...Array(maxStars)].map((_, index) =>
+          index < valutazione ? (
+            <i key={index} className="fa-solid fa-star"></i>
+          ) : (
+            <i key={index} className="fa-regular fa-star"></i>
+          )
+        )}
+      </h6>
       <div className=" text-2xl xl:text-3xl">
         <h6 className="whitespace-nowrap overflow-hidden text-ellipsis">
           {autore}
         </h6>
         <h6>volumi: {numero_volumi}</h6>
-        <h6>{valutazione}</h6>
-        <div className="grid grid-cols-3 h-22 my-4 gap-2 text-center">
+
+        {/* [...Array(maxStar)].map((_, index) => index < data ? <i key={index} className="fa-solid fa-star text-success"></i> : <i key={index} className="fa-regular fa-star text-success"></i>)} */}
+
+        <div className="grid grid-cols-3 my-4 gap-3 text-center">
           {genres.length
             ? genres.map((genre) => (
                 <div
@@ -46,7 +60,7 @@ export default function IndexCard({ data }) {
         <Link
           to={`/${titolo}`}
           state={data}
-          className="inset-ring-4 inset-ring-blue-200 rounded-lg py-1 px-5"
+          className="bg-indigo-500 rounded-xl px-5 py-1 font-bold"
         >
           dettagli
         </Link>

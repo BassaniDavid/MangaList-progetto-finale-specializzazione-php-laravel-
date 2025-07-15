@@ -109,12 +109,13 @@ const IndexPage = () => {
         </div>
 
         <div>
-          <label htmlFor="status">status:</label>
+          <label htmlFor="status">status: </label>
           <select
             name="status"
             id="status"
             value={search.status}
             onChange={(e) => setSearch({ ...search, status: e.target.value })}
+            className="bg-indigo-950 rounded-sm px-2"
           >
             <option value="">Tutti</option>
             <option value="completato">Completato</option>
@@ -175,10 +176,10 @@ const IndexPage = () => {
           </button>
         </div>
       </div>
-      <div className="inset-shadow-sm/90 inset-shadow-black/100 rounded-lg p-5 bg-indigo-900 flex flex-col justify-between my-10">
+      <div className="inset-shadow-sm/90 inset-shadow-black/100 rounded-lg p-5 bg-indigo-900 flex flex-col justify-between my-10 text-2xl">
         {mangas.length > 0
           ? "totale manga trovati: " + mangas.length
-          : "purtroppo non abbiamo trovato nessun manga che corrisponde alla tua ricerca"}
+          : "purtroppo non abbiamo trovato nessun manga che corrisponda alla tua ricerca"}
       </div>
       <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-10">
         {mangas.map((manga) => (
