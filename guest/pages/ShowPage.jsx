@@ -1,8 +1,4 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 
 export default function ShowPage() {
   const location = useLocation();
@@ -26,7 +22,7 @@ export default function ShowPage() {
       <div className="inset-shadow-sm/90 inset-shadow-black/100 rounded-lg p-5 bg-indigo-900 h-full grid grid-cols-1 lg:grid-cols-3 lg:gap-5">
         <img
           src={url_copertina}
-          alt="immagine copertina"
+          alt={`copertina di ${titolo}`}
           className="rounded-lg border-4 border-solid w-full mx-auto"
         />
         <div className="col-span-2">

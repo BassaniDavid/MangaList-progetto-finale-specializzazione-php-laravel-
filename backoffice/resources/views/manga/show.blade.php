@@ -39,11 +39,11 @@
                 </ul>
             </div>
             <div class="card-footer d-flex row justify-content-around p-4 pb-0">
-                <a class="btn btn-outline-warning px-2 px-3 col-12 col-md-3 mb-4 " href="{{ route('manga.edit', $manga) }}">modifica</a>
-                <button type="button" class="btn btn-outline-danger px-2 px-3 col-12 col-md-3 mb-4 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <a class="btn btn-outline-warning px-3 col-12 col-md-3 mb-4 " href="{{ route('manga.edit', $manga) }}">modifica</a>
+                <button type="button" class="btn btn-outline-danger px-3 col-12 col-md-3 mb-4 " data-bs-toggle="modal" data-bs-target="#exampleModal">
                     elimina
                 </button>
-                <a href="{{ route('manga.index') }}" class="btn btn-outline-secondary px-2 px-3 col-12 col-md-3 mb-4">Torna alla lista completa</a>
+                <a href="{{ route('manga.index') }}" class="btn btn-outline-secondary px-3 col-12 col-md-3 mb-4">Torna alla lista completa</a>
             </div>
         </div>
 

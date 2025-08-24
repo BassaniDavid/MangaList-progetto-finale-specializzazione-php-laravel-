@@ -39,8 +39,6 @@ class MangaController extends Controller
             $query->where('status', $request->input('status'));
         }
 
-        // Aggiungi ulteriori filtri e ordinamenti se necessario
-
         $mangas = $query->get();
 
         return response()->json(

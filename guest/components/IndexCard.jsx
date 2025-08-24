@@ -19,7 +19,7 @@ export default function IndexCard({ data }) {
     <div className="inset-shadow-sm/90 inset-shadow-black/100 rounded-lg p-5 bg-indigo-900 h-full flex flex-col justify-between">
       <img
         src={url_copertina}
-        alt="immagine copertina"
+        alt={`copertina di ${titolo}`}
         className="w-full object-cover h-auto md:h-110 lg:h-156 xl:h-130 2xl:h-114 rounded-lg border-4 border-solid mb-5"
       />
       <h2 className=" text-3xl xl:text-4xl/relaxed mb-5 whitespace-nowrap overflow-hidden text-ellipsis font-bold">
@@ -40,8 +40,6 @@ export default function IndexCard({ data }) {
           {autore}
         </h6>
         <h6>volumi: {numero_volumi}</h6>
-
-        {/* [...Array(maxStar)].map((_, index) => index < data ? <i key={index} className="fa-solid fa-star text-success"></i> : <i key={index} className="fa-regular fa-star text-success"></i>)} */}
 
         <div className="grid grid-cols-3 my-4 gap-3 text-center">
           {genres.length

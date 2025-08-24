@@ -94,7 +94,7 @@ const IndexPage = () => {
           <input
             type="number"
             min="0"
-            max="10"
+            max="9.9"
             step="0.1"
             name="valutazione_min"
             id="valutazione_min"
