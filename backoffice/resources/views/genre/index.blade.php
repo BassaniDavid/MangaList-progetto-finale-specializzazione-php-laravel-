@@ -23,7 +23,7 @@
                         <td class="text-center">
                             <a class="btn btn-outline-warning p-0 px-2" href="{{ route('genre.edit', $genre) }}">modifica</a>
                         </td>
-                        <td>
+                        <td class="text-center">
                             <button type="button" class="btn btn-outline-danger p-0 px-2" data-bs-toggle="modal" data-bs-target="#deleteModal" data-id="{{ $genre->id }}">
                                 elimina
                             </button>

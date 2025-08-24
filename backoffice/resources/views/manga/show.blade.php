@@ -10,13 +10,6 @@
                 <h5 class="">
                     {{$manga->titolo}}
                 </h5>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">Autore: {{$manga->autore}}</li>
@@ -38,7 +31,8 @@
                     @endforelse
                 </ul>
             </div>
-            <div class="card-footer d-flex row justify-content-around p-4 pb-0">
+            <hr>
+            <div class="card-body row justify-content-around pt-3 w-100">
                 <a class="btn btn-outline-warning px-3 col-12 col-md-3 mb-4 " href="{{ route('manga.edit', $manga) }}">modifica</a>
                 <button type="button" class="btn btn-outline-danger px-3 col-12 col-md-3 mb-4 " data-bs-toggle="modal" data-bs-target="#exampleModal">
                     elimina
